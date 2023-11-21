@@ -1,0 +1,11 @@
+<launch>
+    
+    <include file= "$(find cam_pack)/launch/task2.launch"/>
+
+    <include file= "$(find ar_track_alvar)/launch/pr2_indiv_no_kinect.launch">
+        <arg name="cam_image_topic" value="/usb_camera/image_raw"/>
+        <arg name="cam_info_topic" value="/usb_camera/camera_info"/>
+        <arg name="output_frame" value="cam_frame"/>
+    </include>
+
+</launch>

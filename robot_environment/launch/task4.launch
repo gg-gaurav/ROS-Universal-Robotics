@@ -1,0 +1,19 @@
+<launch>
+    <arg name="sim" default="true" doc="Launches fake controllers. Use false to start/ connect to real robot." />
+
+    
+    <node pkg="tf" type="static_transform_publisher" name="robot_tf" output="screen"  args="0 -0.76 0 0 0 0 map base_link 10"/>
+    
+
+    <include file= "$(find robot_launcher)/launch/launch_robot.launch">
+        <arg name="use_rviz" value="false"/>
+        <arg name="sim" value="$(arg sim)"/>
+    </include>
+    
+    <node pkg="rviz" type="rviz" name="rviz_node" args="-d $(find cam_pack)/config/task4.rviz"/>
+    <include file= "$(find cam_pack)/launch/task3.launch"/>
+
+    <!-- <node pkg="robot_environment" name="env_node" type="configure_robot_env.py" output="screen" /> -->
+    
+    <node pkg="tf" type="static_transform_publisher" name="tool_tip" output="screen" args="0.016 0 0.098 0 3.6826 0 tool0 welding_tip 10"/>
+</launch>

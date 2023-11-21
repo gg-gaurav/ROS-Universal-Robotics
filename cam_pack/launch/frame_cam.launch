@@ -1,0 +1,10 @@
+<launch>
+
+    <node 
+    pkg="tf" 
+    type="static_transform_publisher" 
+    name="base_tf" 
+    output="screen" 
+    args="0 -0.295 0.515 1.57 3.14 0 map cam_frame 10"/>
+
+</launch>

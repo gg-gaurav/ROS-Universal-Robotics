@@ -1,0 +1,11 @@
+# goal
+geometry_msgs/PoseStamped[] poses
+string goal_description
+
+---
+# result
+int64 result_code
+
+---
+# feedback
+int64 feedback_code
